@@ -270,3 +270,129 @@ gsap.to(".lec2-parallax", {
     scrub: true,
   },
 });
+
+/* ---------- Lecture 4 title + content animation ---------- */
+const lec4Tl = gsap
+  .timeline({ paused: true })
+  .from(".lec4-title-block", {
+    x: -80,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+  })
+  .from(
+    ".lec4-body",
+    {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=0.35"
+  )
+  .from(
+    "#lecture-4 .lec-card",
+    {
+      y: 30,
+      opacity: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    },
+    "-=0.25"
+  )
+  .from(
+    "#lecture-4 .sticky-note",
+    {
+      opacity: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    },
+    "-=0.3"
+  );
+
+ScrollTrigger.create({
+  trigger: "#lecture-4",
+  start: "top 75%",
+  end: "bottom 25%",
+  onEnter: () => lec4Tl.play(),
+  onEnterBack: () => lec4Tl.restart(),
+  onLeave: () => lec4Tl.reverse(),
+  onLeaveBack: () => lec4Tl.reverse(),
+});
+
+/* ---------- Lecture 4 parallax scroll ---------- */
+gsap.to(".lec4-parallax", {
+  yPercent: -25,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#lecture-4",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+/* ---------- Lecture 5 title + content animation ---------- */
+const lec5Tl = gsap
+  .timeline({ paused: true })
+  .from(".lec5-title-block", {
+    x: -80,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+  })
+  .from(
+    ".lec5-body",
+    {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=0.35"
+  )
+  .from(
+    "#lecture-5 .lec-card",
+    {
+      y: 30,
+      opacity: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    },
+    "-=0.25"
+  )
+  .from(
+    "#lecture-5 .sticky-note",
+    {
+      opacity: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    },
+    "-=0.3"
+  );
+
+ScrollTrigger.create({
+  trigger: "#lecture-5",
+  start: "top 75%",
+  end: "bottom 25%",
+  onEnter: () => lec5Tl.play(),
+  onEnterBack: () => lec5Tl.restart(),
+  onLeave: () => lec5Tl.reverse(),
+  onLeaveBack: () => lec5Tl.reverse(),
+});
+
+/* ---------- Lecture 5 parallax scroll ---------- */
+gsap.to(".lec5-parallax", {
+  yPercent: -25,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#lecture-5",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
