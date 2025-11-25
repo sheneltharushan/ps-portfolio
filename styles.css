@@ -104,3 +104,8 @@ body {
 .nav-label {
   white-space: nowrap;
 }
+
+/*--ack--*/
+.ack-content {
+  transform-origin: center center;
+}

@@ -12,7 +12,10 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-lenis.on("scroll", ScrollTrigger.update);
+// keep ScrollTrigger in sync with Lenis
+lenis.on("scroll", () => {
+  ScrollTrigger.update();
+});
 
 /* ---------- Hero intro / outro ---------- */
 const heroTl = gsap
@@ -103,13 +106,13 @@ if (sideNav) {
   const labels = sideNav.querySelectorAll(".nav-label");
 
   // starting state: collapsed
-  gsap.set(sideNav, { width: 56 }); // px; Tailwind w-14 = 3.5rem = 56px
+  gsap.set(sideNav, { width: 56 }); // Tailwind w-14 = 56px
   gsap.set(labels, { opacity: 0, x: -8 });
 
   const navTl = gsap
     .timeline({ paused: true })
     .to(sideNav, {
-      width: 224, // px; Tailwind w-56 ≈ 14rem
+      width: 224, // Tailwind w-56 ≈ 224px
       duration: 0.35,
       ease: "power3.out",
     })
@@ -128,3 +131,58 @@ if (sideNav) {
   sideNav.addEventListener("mouseenter", () => navTl.play());
   sideNav.addEventListener("mouseleave", () => navTl.reverse());
 }
+
+/* ---------- Acknowledgment section fade-in ---------- */
+const ackTl = gsap
+  .timeline({ paused: true })
+  .from(".ack-label", {
+    y: 24,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+  })
+  .from(
+    ".ack-para-main",
+    {
+      y: 28,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=0.3"
+  )
+  .from(
+    ".ack-para-lecturers",
+    {
+      y: 28,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=0.35"
+  );
+
+ScrollTrigger.create({
+  trigger: "#acknowledgment",
+  start: "top 75%",
+  onEnter: () => ackTl.play(),
+  onEnterBack: () => ackTl.restart(),
+});
+
+/* ---------- Acknowledgment pinned zoom ---------- */
+gsap.fromTo(
+  ".ack-content",
+  { scale: 1 },
+  {
+    scale: 1.18,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#acknowledgment",
+      start: "top top",
+      end: "+=100%", // how long it stays pinned; adjust to taste
+      scrub: true,
+      pin: true,
+      anticipatePin: 1,
+    },
+  }
+);

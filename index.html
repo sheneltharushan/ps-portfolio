@@ -306,27 +306,52 @@
         </div>
       </section>
 
-      <!-- NEXT SECTION (placeholder content) -->
+      <!-- ACKNOWLEDGMENT SECTION -->
       <section
-        id="intro"
-        class="min-h-screen border-t border-[var(--border)] bg-[var(--card)]"
+        id="acknowledgment"
+        class="min-h-screen border-t border-[var(--border)] bg-[var(--bg)] flex items-center"
       >
-        <div class="max-w-4xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div
+          class="ack-content max-w-3xl mx-auto w-full px-6 md:px-10 py-16 md:py-24 text-center relative"
+        >
+          <!-- soft glow -->
+          <div
+            class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full bg-[var(--accent)]/10 blur-3xl"
+          ></div>
+
+          <!-- small label -->
           <p
-            class="text-sm uppercase tracking-[0.25em] text-[var(--accent)] mb-4"
+            class="ack-label inline-flex items-center justify-center rounded-full border border-[var(--accent)]/70 bg-[var(--card)]/80 px-5 py-1 text-[0.65rem] md:text-xs uppercase tracking-[0.25em] text-[var(--accent)] mb-6 relative"
           >
-            Overview
+            Acknowledgment
           </p>
-          <h2 class="text-2xl md:text-3xl font-gotham-black mb-6">
-            About this portfolio
-          </h2>
+
+          <!-- paragraph about the portfolio -->
           <p
-            class="text-sm md:text-base text-[var(--text-muted)] leading-relaxed font-gotham-light"
+            class="ack-para ack-para-main font-gotham-light text-sm md:text-base text-[var(--text-muted)] leading-relaxed mb-5 relative"
           >
-            This section can introduce the Professional Skills module and
-            explain what the portfolio contains. You can later replace this
-            placeholder text with your real description and links to each
-            lecture summary.
+            This portfolio has been developed for the Professional Skills module
+            to bring together key ideas, reflections, and learning from each
+            lecture. It is designed to show how the concepts discussed in class
+            connect to real professional practice and ongoing personal
+            development.
+          </p>
+
+          <!-- paragraph thanking the lecturers -->
+          <p
+            class="ack-para ack-para-lecturers font-gotham-light text-sm md:text-base text-[var(--text-muted)] leading-relaxed relative"
+          >
+            I would like to sincerely thank
+            <span class="font-gotham-black text-[var(--accent)]"
+              >Mrs. Ishara Weerasinghe</span
+            >
+            and
+            <span class="font-gotham-black text-[var(--accent)]"
+              >Miss Ishadi Nilaweera</span
+            >
+            for their guidance, feedback, and encouragement throughout this
+            module. Their lectures, discussions, and support created the
+            foundation for the learning captured in this portfolio.
           </p>
         </div>
       </section>
