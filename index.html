@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Professional Skills Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  </head>
+
+  <body class="bg-[var(--bg)] text-[var(--text-main)]">
+    <main>
+      <aside
+        class="fixed top-1/2 left-4 -translate-y-1/2 z-40"
+        aria-label="Section navigation"
+      >
+        <nav
+          id="side-nav"
+          class="nav-glass flex flex-col items-center py-6 gap-4 overflow-hidden"
+        >
+          <!-- Home -->
+          <a
+            href="#hero"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 3 3 10h2v9h5v-5h4v5h5v-9h2L12 3z" />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Home
+            </span>
+          </a>
+
+          <!-- Acknowledgment -->
+          <a
+            href="#acknowledgment"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M7 2h7l5 5v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm6 2H7v16h10V9h-4V4z"
+                />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Acknowledgment
+            </span>
+          </a>
+
+          <!-- Template icon reused for lectures -->
+          <!-- Lecture 1 -->
+          <a
+            href="#lecture-1"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5 3h11a3 3 0 0 1 3 3v13h-2V6a1 1 0 0 0-1-1H5v15H3V5a2 2 0 0 1 2-2z"
+                />
+                <path d="M7 7h8v2H7zM7 11h5v2H7z" />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Lecture 1
+            </span>
+          </a>
+
+          <a
+            href="#lecture-2"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5 3h11a3 3 0 0 1 3 3v13h-2V6a1 1 0 0 0-1-1H5v15H3V5a2 2 0 0 1 2-2z"
+                />
+                <path d="M7 7h8v2H7zM7 11h5v2H7z" />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Lecture 2
+            </span>
+          </a>
+
+          <a
+            href="#lecture-3"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5 3h11a3 3 0 0 1 3 3v13h-2V6a1 1 0 0 0-1-1H5v15H3V5a2 2 0 0 1 2-2z"
+                />
+                <path d="M7 7h8v2H7zM7 11h5v2H7z" />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Lecture 3
+            </span>
+          </a>
+
+          <a
+            href="#lecture-4"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5 3h11a3 3 0 0 1 3 3v13h-2V6a1 1 0 0 0-1-1H5v15H3V5a2 2 0 0 1 2-2z"
+                />
+                <path d="M7 7h8v2H7zM7 11h5v2H7z" />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Lecture 4
+            </span>
+          </a>
+
+          <a
+            href="#lecture-5"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5 3h11a3 3 0 0 1 3 3v13h-2V6a1 1 0 0 0-1-1H5v15H3V5a2 2 0 0 1 2-2z"
+                />
+                <path d="M7 7h8v2H7zM7 11h5v2H7z" />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Lecture 5
+            </span>
+          </a>
+
+          <a
+            href="#lecture-6"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5 3h11a3 3 0 0 1 3 3v13h-2V6a1 1 0 0 0-1-1H5v15H3V5a2 2 0 0 1 2-2z"
+                />
+                <path d="M7 7h8v2H7zM7 11h5v2H7z" />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Lecture 6
+            </span>
+          </a>
+
+          <a
+            href="#lecture-7"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5 3h11a3 3 0 0 1 3 3v13h-2V6a1 1 0 0 0-1-1H5v15H3V5a2 2 0 0 1 2-2z"
+                />
+                <path d="M7 7h8v2H7zM7 11h5v2H7z" />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Lecture 7
+            </span>
+          </a>
+
+          <a
+            href="#lecture-8"
+            class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <span class="flex items-center justify-center w-7 h-7">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5 3h11a3 3 0 0 1 3 3v13h-2V6a1 1 0 0 0-1-1H5v15H3V5a2 2 0 0 1 2-2z"
+                />
+                <path d="M7 7h8v2H7zM7 11h5v2H7z" />
+              </svg>
+            </span>
+            <span
+              class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
+            >
+              Lecture 8
+            </span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- HERO -->
+      <section
+        id="hero"
+        class="relative min-h-screen flex items-center overflow-hidden"
+      >
+        <div class="max-w-6xl mx-auto w-full px-6 md:px-10">
+          <div class="hero-title leading-none text-center">
+            <p
+              class="hero-line hero-line-1 font-gotham-light text-3xl md:text-4xl tracking-tight mb-1 text-[var(--text-main)]"
+            >
+              Professional Skills
+            </p>
+            <p
+              class="hero-line hero-line-2 font-gotham-ultra text-[clamp(8rem,20vw,12rem)] uppercase tracking-tight text-[var(--text-main)]"
+            >
+              PORTFOLIO
+            </p>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div
+          id="scroll-indicator"
+          class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        >
+          <span
+            class="text-[0.65rem] md:text-xs uppercase tracking-[0.25em] text-[var(--text-muted)]"
+          >
+            Scroll down
+          </span>
+
+          <div
+            class="w-[26px] h-[40px] border border-[var(--accent)] rounded-full flex items-start justify-center p-1"
+          >
+            <div
+              class="w-1.5 h-2.5 bg-[var(--accent)] rounded-full scroll-dot"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEXT SECTION (placeholder content) -->
+      <section
+        id="intro"
+        class="min-h-screen border-t border-[var(--border)] bg-[var(--card)]"
+      >
+        <div class="max-w-4xl mx-auto px-6 md:px-10 py-20 md:py-28">
+          <p
+            class="text-sm uppercase tracking-[0.25em] text-[var(--accent)] mb-4"
+          >
+            Overview
+          </p>
+          <h2 class="text-2xl md:text-3xl font-gotham-black mb-6">
+            About this portfolio
+          </h2>
+          <p
+            class="text-sm md:text-base text-[var(--text-muted)] leading-relaxed font-gotham-light"
+          >
+            This section can introduce the Professional Skills module and
+            explain what the portfolio contains. You can later replace this
+            placeholder text with your real description and links to each
+            lecture summary.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+/* ------------ Colors / base ------------ */
+:root {
+  --bg: #050507;
+  --card: #111317;
+  --border: #262935;
+
+  --text-main: #f5f5f7;
+  --text-muted: #a0a3b1;
+
+  /* orange accent */
+  --accent: #ff8a3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: "Gotham Light", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* ------------ Fonts ------------ */
+/* Adjust paths if needed */
+@font-face {
+  font-family: "Gotham Light";
+  src: url("assets/fonts/Gotham-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham Black";
+  src: url("assets/fonts/GOTHAM-BLACK.TTF") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham Ultra";
+  src: url("assets/fonts/Gotham-Ultra.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+.font-gotham-light {
+  font-family: "Gotham Light", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.font-gotham-black {
+  font-family: "Gotham Black", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.font-gotham-ultra {
+  font-family: "Gotham Ultra", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* ------------ Scroll indicator ------------ */
+
+#scroll-indicator {
+  opacity: 0; /* GSAP will fade this in when hero is visible */
+}
+
+.scroll-dot {
+  animation: scroll-dot 1.3s ease-in-out infinite;
+}
+
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(12px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+
+/* ------- Glass side nav ------- */
+
+.nav-glass {
+  background: rgba(10, 10, 14, 0.9);
+  border-radius: 32px; /* less round */
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nav-glass:hover {
+  background: rgba(18, 18, 24, 0.96);
+}
+
+.nav-label {
+  white-space: nowrap;
+}
