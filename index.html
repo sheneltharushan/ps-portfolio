@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="styles.css" />
 
+    <!-- Tailwind + GSAP + ScrollTrigger + Lenis -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -15,6 +16,7 @@
 
   <body class="bg-[var(--bg)] text-[var(--text-main)]">
     <main>
+      <!-- SIDE NAV -->
       <aside
         class="fixed top-1/2 left-4 -translate-y-1/2 z-40"
         aria-label="Section navigation"
@@ -69,8 +71,7 @@
             </span>
           </a>
 
-          <!-- Template icon reused for lectures -->
-          <!-- Lecture 1 -->
+          <!-- Lecture links -->
           <a
             href="#lecture-1"
             class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
@@ -91,7 +92,7 @@
             <span
               class="nav-label font-gotham-light text-sm opacity-0 -translate-x-2"
             >
-              Lecture 1
+              1: Introduction to<br />Professional Skills
             </span>
           </a>
 
@@ -119,6 +120,7 @@
             </span>
           </a>
 
+          <!-- Placeholders for later lectures -->
           <a
             href="#lecture-3"
             class="flex items-center gap-3 w-full px-3 py-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
@@ -270,7 +272,23 @@
         id="hero"
         class="relative min-h-screen flex items-center overflow-hidden"
       >
-        <div class="max-w-6xl mx-auto w-full px-6 md:px-10">
+        <!-- Background video -->
+        <video
+          class="absolute inset-0 w-full h-full object-cover -z-10 pointer-events-none"
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+          <source src="assets/images/hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Dark overlay so text is readable -->
+        <div class="absolute inset-0 bg-black/60 -z-10"></div>
+
+        <!-- Hero content -->
+        <div class="max-w-6xl mx-auto w-full px-6 md:px-10 z-10">
           <div class="hero-title leading-none text-center">
             <p
               class="hero-line hero-line-1 font-gotham-light text-3xl md:text-4xl tracking-tight mb-1 text-[var(--text-main)]"
@@ -288,7 +306,7 @@
         <!-- Scroll indicator -->
         <div
           id="scroll-indicator"
-          class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+          class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
         >
           <span
             class="text-[0.65rem] md:text-xs uppercase tracking-[0.25em] text-[var(--text-muted)]"
@@ -353,6 +371,619 @@
             module. Their lectures, discussions, and support created the
             foundation for the learning captured in this portfolio.
           </p>
+        </div>
+      </section>
+
+      <!-- LECTURE 1 -->
+      <section
+        id="lecture-1"
+        class="min-h-screen border-t border-[var(--border)] bg-[var(--bg)]"
+      >
+        <div
+          class="lec1-parallax max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24"
+        >
+          <!-- Title block at top-left -->
+          <header class="lec1-title-block mb-10">
+            <p
+              class="lec1-label font-gotham-light text-sm md:text-base text-[var(--text-main)] mb-3"
+            >
+              Lecture 01:
+            </p>
+            <h2
+              class="lec1-heading font-gotham-black text-[clamp(3rem,6vw,4.2rem)] md:text-[4.5rem] leading-tight text-[var(--text-main)]"
+            >
+              Introduction to<br />
+              Professional Skills
+            </h2>
+          </header>
+
+          <!-- Intro paragraph -->
+          <p
+            class="lec1-body font-gotham-light text-sm md:text-base text-[var(--text-muted)] leading-relaxed mb-10 max-w-3xl"
+          >
+            Professional skills are the abilities that help individuals perform
+            effectively in a workplace. They include skills such as
+            communication, teamwork, problem solving, time management, and
+            technical knowledge. These skills improve productivity, support
+            professional growth, and enable employees to handle tasks
+            confidently while maintaining good relationships with colleagues and
+            clients.
+          </p>
+
+          <!-- Block 1: Skills necessary for employment -->
+          <section class="mb-12">
+            <h3
+              class="font-gotham-black text-sm md:text-base uppercase tracking-[0.18em] text-[var(--accent)] mb-4"
+            >
+              Skills necessary for employment
+            </h3>
+            <p
+              class="font-gotham-light text-xs md:text-sm text-[var(--text-muted)] leading-relaxed mb-6 max-w-3xl"
+            >
+              To be employable, a person needs a combination of technical
+              skills, soft skills, and transferable skills that can be used in
+              different roles and industries.
+            </p>
+
+            <div class="lec1-grid grid gap-6 md:gap-8 md:grid-cols-3">
+              <!-- Technical skills sticky -->
+              <!-- Technical skills sticky -->
+              <article class="sticky-note">
+                <div class="sticky-note-inner">
+                  <h4 class="sticky-note-title mb-3">Technical skills</h4>
+                  <p class="sticky-note-text">
+                    Job specific skills, such as using particular software,
+                    operating machines, or applying specialised methods. These
+                    are often learned through formal education, training, or
+                    hands on experience.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Soft & transferable skills sticky -->
+              <article class="sticky-note">
+                <div class="sticky-note-inner">
+                  <h4 class="sticky-note-title mb-3">
+                    Soft and transferable skills
+                  </h4>
+                  <p class="sticky-note-text mb-2">
+                    These skills are valuable in any workplace and can move with
+                    a person from one job or industry to another.
+                  </p>
+                  <ul class="sticky-note-text text-left inline-block">
+                    <li>• Critical thinking and problem solving</li>
+                    <li>• Teamwork and collaboration</li>
+                    <li>• Time management</li>
+                    <li>• Communication skills</li>
+                    <li>• Leadership skills</li>
+                  </ul>
+                </div>
+              </article>
+
+              <!-- Workplace skills sticky -->
+              <article class="sticky-note">
+                <div class="sticky-note-inner">
+                  <h4 class="sticky-note-title mb-3">Workplace skills</h4>
+                  <p class="sticky-note-text">
+                    Skills such as punctuality, reliability, following
+                    procedures, and being able to work both under supervision
+                    and independently. They reflect how a person behaves and
+                    contributes in a professional environment.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Divider -->
+          <div class="h-px w-full bg-[var(--border)]/60 my-4 md:my-6"></div>
+
+          <!-- Block 2: Values, beliefs, attitudes, character -->
+          <section class="mt-8">
+            <h3
+              class="font-gotham-black text-sm md:text-base uppercase tracking-[0.18em] text-[var(--accent)] mb-4"
+            >
+              Values, beliefs, attitudes, and character
+            </h3>
+            <p
+              class="font-gotham-light text-xs md:text-sm text-[var(--text-muted)] leading-relaxed mb-6 max-w-3xl"
+            >
+              Professional behaviour is influenced not only by skills, but also
+              by the deeper values, beliefs, attitudes, and character that shape
+              how a person responds to challenges and interacts with others.
+            </p>
+
+            <div class="lec1-grid grid gap-6 md:gap-8 md:grid-cols-4">
+              <!-- Values -->
+              <article
+                class="lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-4 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-xs md:text-sm mb-2 text-[var(--text-main)]"
+                >
+                  Values
+                </h4>
+                <p
+                  class="font-gotham-light text-[0.7rem] md:text-xs text-[var(--text-muted)] leading-relaxed"
+                >
+                  Fundamental ideas and principles that influence a person's
+                  actions and choices. They act as a moral compass and guide how
+                  someone responds to challenges and interactions with others.
+                </p>
+              </article>
+
+              <!-- Beliefs -->
+              <article
+                class="lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-4 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-xs md:text-sm mb-2 text-[var(--text-main)]"
+                >
+                  Beliefs
+                </h4>
+                <p
+                  class="font-gotham-light text-[0.7rem] md:text-xs text-[var(--text-muted)] leading-relaxed"
+                >
+                  Personal views about ourselves and the world, shaped by
+                  upbringing, cultural background, and experiences. Beliefs
+                  influence how we interpret situations and react at work.
+                </p>
+              </article>
+
+              <!-- Attitudes -->
+              <article
+                class="lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-4 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-xs md:text-sm mb-2 text-[var(--text-main)]"
+                >
+                  Attitudes
+                </h4>
+                <p
+                  class="font-gotham-light text-[0.7rem] md:text-xs text-[var(--text-muted)] leading-relaxed"
+                >
+                  The way a person thinks and feels about people, tasks, and
+                  situations. A positive and professional attitude supports
+                  teamwork, problem solving, and trust in the workplace.
+                </p>
+              </article>
+
+              <!-- Character -->
+              <article
+                class="lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-4 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-xs md:text-sm mb-2 text-[var(--text-main)]"
+                >
+                  Character
+                </h4>
+                <p
+                  class="font-gotham-light text-[0.7rem] md:text-xs text-[var(--text-muted)] leading-relaxed"
+                >
+                  The long term qualities that describe who we are, such as
+                  honesty, responsibility, respect, and integrity. Strong
+                  character helps others trust and rely on us in a professional
+                  setting.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <!-- What I Learned -->
+          <section class="mt-16">
+            <div
+              class="relative max-w-3xl mx-auto text-center rounded-3xl bg-[var(--card)]/95 border border-[var(--accent)]/70 px-6 md:px-10 py-10 shadow-[0_22px_70px_rgba(0,0,0,0.75)] overflow-hidden"
+            >
+              <!-- subtle accent glow -->
+              <div
+                class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-40 w-40 rounded-full bg-[var(--accent)]/15 blur-3xl"
+              ></div>
+
+              <h3
+                class="relative font-gotham-black text-lg md:text-xl mb-4 text-[var(--accent)]"
+              >
+                What I learned
+              </h3>
+
+              <p
+                class="relative font-gotham-light text-sm md:text-base text-[var(--text-main)] leading-relaxed"
+              >
+                Professional abilities like cooperation and communication are
+                essential for career success. Attitudes and values improve
+                mindset and influence behaviour in the workplace. The Johari
+                Window enhances interpersonal relationships and self-awareness.
+                When combined, technical and soft skills improve employability.
+                Everyday interactions provide chances to hone and expand these
+                abilities.
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- LECTURE 2 -->
+      <section
+        id="lecture-2"
+        class="min-h-screen border-t border-[var(--border)] bg-[var(--bg)]"
+      >
+        <div
+          class="lec2-parallax max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24"
+        >
+          <!-- Title block at top-left -->
+          <header class="lec2-title-block mb-10">
+            <p
+              class="font-gotham-light text-sm md:text-base text-[var(--text-main)] mb-3"
+            >
+              Lecture 02:
+            </p>
+            <h2
+              class="font-gotham-black text-[clamp(2.6rem,5.5vw,3.8rem)] md:text-[4.2rem] leading-tight text-[var(--text-main)]"
+            >
+              CV and Cover<br />
+              Letter Writing
+            </h2>
+          </header>
+
+          <!-- Intro paragraph -->
+          <p
+            class="lec2-body font-gotham-light text-sm md:text-base text-[var(--text-muted)] leading-relaxed mb-10 max-w-3xl"
+          >
+            This lecture focused on how to prepare a clear and professional CV
+            and cover letter. It explained what a CV is, why it matters in job
+            applications, and how careful structure, research, and tailoring can
+            help create a strong first impression with employers.
+          </p>
+
+          <!-- Block 1: Understanding CVs -->
+          <section class="mb-12">
+            <h3
+              class="font-gotham-black text-sm md:text-base uppercase tracking-[0.18em] text-[var(--accent)] mb-4"
+            >
+              Understanding CVs
+            </h3>
+
+            <div class="grid gap-6 md:gap-8 md:grid-cols-3">
+              <!-- What is a CV -->
+              <article
+                class="lec2-card lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-sm md:text-base mb-2 text-[var(--text-main)]"
+                >
+                  What is a CV?
+                </h4>
+                <p
+                  class="font-gotham-light text-[0.75rem] md:text-xs text-[var(--text-muted)] leading-relaxed"
+                >
+                  A document that explains who you are, what you have studied,
+                  and the skills and experiences you have. It highlights your
+                  education, achievements, abilities, and personal details so
+                  employers can judge your suitability.
+                </p>
+              </article>
+
+              <!-- Purpose of a CV -->
+              <article
+                class="lec2-card lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-sm md:text-base mb-2 text-[var(--text-main)]"
+                >
+                  Purpose of a CV
+                </h4>
+                <p
+                  class="font-gotham-light text-[0.75rem] md:text-xs text-[var(--text-muted)] leading-relaxed"
+                >
+                  To show your qualifications and suitability for a specific
+                  role. A good CV connects your background to the requirements
+                  of the job so the employer can quickly see why you are a
+                  strong candidate.
+                </p>
+              </article>
+
+              <!-- First impression -->
+              <article
+                class="lec2-card lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-sm md:text-base mb-2 text-[var(--text-main)]"
+                >
+                  Making a positive first impression
+                </h4>
+                <p
+                  class="font-gotham-light text-[0.75rem] md:text-xs text-[var(--text-muted)] leading-relaxed"
+                >
+                  A CV that is clean, easy to read, well organised, and visually
+                  appealing is more likely to be noticed. A concise CV that is
+                  free of spelling and grammar errors creates a strong
+                  professional image.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Block 2: Writing an effective CV -->
+          <section class="mt-10 mb-12">
+            <h3
+              class="font-gotham-black text-sm md:text-base uppercase tracking-[0.18em] text-[var(--accent)] mb-4"
+            >
+              Writing an effective CV
+            </h3>
+
+            <div class="grid gap-6 md:gap-8 md:grid-cols-3">
+              <!-- Tailoring your CV -->
+              <article
+                class="lec2-card lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-sm md:text-base mb-2 text-[var(--text-main)]"
+                >
+                  Tailoring your CV
+                </h4>
+                <p
+                  class="font-gotham-light text-[0.75rem] md:text-xs text-[var(--text-muted)] leading-relaxed"
+                >
+                  Customising your CV to each job shows that you have taken time
+                  to match your skills to the position. It highlights relevant
+                  strengths, such as creativity or technical expertise, that
+                  align with the organisation’s needs.
+                </p>
+              </article>
+
+              <!-- Importance of research -->
+              <article
+                class="lec2-card lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-sm md:text-base mb-2 text-[var(--text-main)]"
+                >
+                  Importance of research
+                </h4>
+                <p
+                  class="font-gotham-light text-[0.75rem] md:text-xs text-[var(--text-muted)] leading-relaxed"
+                >
+                  Studying the job description and company information helps you
+                  find key requirements and keywords. Using these in your CV
+                  improves the chances of passing Applicant Tracking Systems
+                  (ATS) and matching the position’s expectations.
+                </p>
+              </article>
+
+              <!-- Structure and formatting -->
+              <article
+                class="lec2-card lec-card rounded-2xl bg-[var(--card)]/95 border border-[var(--border)] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.7)]"
+              >
+                <h4
+                  class="font-gotham-black text-sm md:text-base mb-2 text-[var(--text-main)]"
+                >
+                  Structure and formatting
+                </h4>
+                <ul
+                  class="font-gotham-light text-[0.75rem] md:text-xs text-[var(--text-muted)] leading-relaxed space-y-1"
+                >
+                  <li>
+                    • Proper use of headings, bullet points, and white space
+                  </li>
+                  <li>• Choosing an appropriate font and font size</li>
+                  <li>
+                    • Maintaining consistent formatting throughout the document
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <!-- Block 3: Components & common mistakes -->
+          <section class="mt-10">
+            <div
+              class="grid gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]"
+            >
+              <!-- Essential components -->
+              <div>
+                <h3
+                  class="font-gotham-black text-sm md:text-base uppercase tracking-[0.18em] text-[var(--accent)] mb-4"
+                >
+                  Essential CV components
+                </h3>
+                <ul
+                  class="font-gotham-light text-sm md:text-base text-[var(--text-muted)] leading-relaxed space-y-1"
+                >
+                  <li>• Personal information</li>
+                  <li>• Professional summary</li>
+                  <li>• Work experience</li>
+                  <li>• Education</li>
+                  <li>• Skills</li>
+                  <li>• Achievements and awards</li>
+                </ul>
+              </div>
+
+              <!-- Avoiding common mistakes (Lecture 2 sticky note) -->
+              <article class="sticky-note md:ml-auto">
+                <div class="sticky-note-inner">
+                  <h4 class="sticky-note-title mb-3">
+                    Avoiding common mistakes
+                  </h4>
+                  <ul class="sticky-note-text text-left inline-block">
+                    <li>• Spelling and grammar mistakes</li>
+                    <li>
+                      • Adding information that is not needed or is outdated
+                    </li>
+                    <li>• Writing too much or too little</li>
+                    <li>• Using different styles or formats inconsistently</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- What I Learned -->
+          <section class="mt-16">
+            <div
+              class="relative max-w-3xl mx-auto text-center rounded-3xl bg-[var(--card)]/95 border border-[var(--accent)]/70 px-6 md:px-10 py-10 shadow-[0_22px_70px_rgba(0,0,0,0.75)] overflow-hidden"
+            >
+              <!-- subtle accent glow -->
+              <div
+                class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-40 w-40 rounded-full bg-[var(--accent)]/15 blur-3xl"
+              ></div>
+
+              <h3
+                class="relative font-gotham-black text-lg md:text-xl mb-4 text-[var(--accent)]"
+              >
+                What I learned
+              </h3>
+
+              <ul
+                class="relative font-gotham-light text-sm md:text-base text-[var(--text-main)] leading-relaxed text-left md:text-center space-y-2 md:space-y-1"
+              >
+                <li>
+                  • I learned what a CV is and its purpose in job applications.
+                </li>
+                <li>
+                  • I understood that a CV showcases skills, qualifications, and
+                  experience.
+                </li>
+                <li>
+                  • I learned the importance of creating a strong first
+                  impression with a clean and well-organised CV.
+                </li>
+                <li>
+                  • I realised that tailoring a CV to each job increases the
+                  chances of being noticed.
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- LECTURE 3: RESEARCH WRITING -->
+      <section
+        id="lecture-3"
+        class="min-h-screen border-t border-[var(--border)] bg-[var(--bg)]"
+      >
+        <div
+          class="lec3-parallax max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24"
+        >
+          <!-- Title block at top-left -->
+          <header class="lec3-title-block mb-10">
+            <p
+              class="font-gotham-light text-sm md:text-base text-[var(--text-main)] mb-3"
+            >
+              Lecture 03:
+            </p>
+            <h2
+              class="font-gotham-black text-[clamp(2.8rem,5.6vw,3.9rem)] md:text-[4.3rem] leading-tight text-[var(--text-main)]"
+            >
+              Research Writing
+            </h2>
+          </header>
+
+          <!-- Intro + illustration -->
+          <section class="mb-12">
+            <div
+              class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start"
+            >
+              <!-- What is research writing -->
+              <div>
+                <h3
+                  class="font-gotham-black text-sm md:text-base uppercase tracking-[0.18em] text-[var(--accent)] mb-4"
+                >
+                  What is research writing?
+                </h3>
+                <p
+                  class="lec3-body font-gotham-light text-sm md:text-base text-[var(--text-muted)] leading-relaxed"
+                >
+                  Research writing is a structured way of collecting
+                  information, analysing it, and presenting findings in a clear
+                  and organised manner. It involves studying a topic, using
+                  reliable sources, and writing based on evidence rather than
+                  personal opinions. Research writing helps us understand a
+                  subject deeply and communicate knowledge accurately.
+                </p>
+              </div>
+
+              <!-- Illustration card (replace image src with your own) -->
+              <div
+                class="lec-card rounded-3xl bg-[var(--card)]/95 border border-[var(--border)] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.7)] flex items-center justify-center"
+              >
+                <img
+                  src="assets/images/research.webp"
+                  alt="Research writing illustration"
+                  class="w-full max-w-xs mx-auto object-contain"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- Block 2: Purposes + what research writing includes (sticky notes) -->
+          <section class="mt-10 mb-12">
+            <div class="grid gap-8 md:grid-cols-2">
+              <!-- Purposes sticky -->
+              <article class="sticky-note">
+                <div class="sticky-note-inner">
+                  <h4 class="sticky-note-title mb-3">
+                    Purposes of research writing
+                  </h4>
+                  <ul class="sticky-note-text text-left inline-block">
+                    <li>
+                      • To explore and understand a specific topic in detail
+                    </li>
+                    <li>• To find answers to questions or solve problems</li>
+                    <li>• To support ideas with facts, data, and evidence</li>
+                    <li>• To share new knowledge with others</li>
+                  </ul>
+                </div>
+              </article>
+
+              <!-- Includes sticky -->
+              <article class="sticky-note">
+                <div class="sticky-note-inner">
+                  <h4 class="sticky-note-title mb-3">
+                    Research writing includes
+                  </h4>
+                  <ul class="sticky-note-text text-left inline-block">
+                    <li>• Choosing and understanding a research topic</li>
+                    <li>• Collecting information from reliable sources</li>
+                    <li>• Reviewing existing literature</li>
+                    <li>• Analysing data and findings</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- What I Learned -->
+          <section class="mt-16">
+            <div
+              class="relative max-w-3xl mx-auto text-center rounded-3xl bg-[var(--card)]/95 border border-[var(--accent)]/70 px-6 md:px-10 py-10 shadow-[0_22px_70px_rgba(0,0,0,0.75)] overflow-hidden"
+            >
+              <!-- subtle accent glow -->
+              <div
+                class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-40 w-40 rounded-full bg-[var(--accent)]/15 blur-3xl"
+              ></div>
+
+              <h3
+                class="relative font-gotham-black text-lg md:text-xl mb-4 text-[var(--accent)]"
+              >
+                What I learned
+              </h3>
+
+              <ul
+                class="relative font-gotham-light text-sm md:text-base text-[var(--text-main)] leading-relaxed text-left md:text-center space-y-2 md:space-y-1"
+              >
+                <li>
+                  • Understanding how to choose and focus on a research topic.
+                </li>
+                <li>• Formulating clear and concise research questions.</li>
+                <li>
+                  • Conducting literature reviews and identifying credible
+                  sources.
+                </li>
+                <li>• Analysing and interpreting data effectively.</li>
+                <li>• Organising ideas logically in a structured format.</li>
+              </ul>
+            </div>
+          </section>
         </div>
       </section>
     </main>

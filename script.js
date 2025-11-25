@@ -12,7 +12,6 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// keep ScrollTrigger in sync with Lenis
 lenis.on("scroll", () => {
   ScrollTrigger.update();
 });
@@ -64,7 +63,7 @@ gsap.to(".hero-title", {
   },
 });
 
-/* ---------- Scroll indicator behaviour ---------- */
+/* ---------- Scroll indicator ---------- */
 ScrollTrigger.create({
   trigger: "#hero",
   start: "top 90%",
@@ -105,14 +104,13 @@ const sideNav = document.querySelector("#side-nav");
 if (sideNav) {
   const labels = sideNav.querySelectorAll(".nav-label");
 
-  // starting state: collapsed
-  gsap.set(sideNav, { width: 56 }); // Tailwind w-14 = 56px
+  gsap.set(sideNav, { width: 56 });
   gsap.set(labels, { opacity: 0, x: -8 });
 
   const navTl = gsap
     .timeline({ paused: true })
     .to(sideNav, {
-      width: 224, // Tailwind w-56 ≈ 224px
+      width: 240,
       duration: 0.35,
       ease: "power3.out",
     })
@@ -132,57 +130,143 @@ if (sideNav) {
   sideNav.addEventListener("mouseleave", () => navTl.reverse());
 }
 
-/* ---------- Acknowledgment section fade-in ---------- */
+/* ---------- Acknowledgment section: intro + pinned zoom ---------- */
 const ackTl = gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#acknowledgment",
+      start: "top top",
+      end: "+=120%",
+      scrub: true,
+      pin: true,
+    },
+  })
+  .fromTo(
+    ".ack-content",
+    { scale: 0.9, opacity: 0.0 },
+    { scale: 1.3, opacity: 1, ease: "none" }
+  );
+
+const lec1Tl = gsap
   .timeline({ paused: true })
-  .from(".ack-label", {
-    y: 24,
+  .from(".lec1-title-block", {
+    x: -80,
     opacity: 0,
-    duration: 0.6,
+    duration: 0.8,
     ease: "power3.out",
   })
   .from(
-    ".ack-para-main",
+    ".lec1-body",
     {
-      y: 28,
+      y: 24,
       opacity: 0,
       duration: 0.6,
       ease: "power3.out",
     },
-    "-=0.3"
+    "-=0.35"
   )
   .from(
-    ".ack-para-lecturers",
+    "#lecture-1 .lec-card",
     {
-      y: 28,
+      y: 30,
       opacity: 0,
-      duration: 0.6,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    },
+    "-=0.25"
+  )
+  .from(
+    "#lecture-1 .sticky-note",
+    {
+      opacity: 0,
+      duration: 0.55,
+      stagger: 0.08,
       ease: "power3.out",
     },
     "-=0.35"
   );
 
 ScrollTrigger.create({
-  trigger: "#acknowledgment",
+  trigger: "#lecture-1",
   start: "top 75%",
-  onEnter: () => ackTl.play(),
-  onEnterBack: () => ackTl.restart(),
+  end: "bottom 25%",
+  onEnter: () => lec1Tl.play(),
+  onEnterBack: () => lec1Tl.restart(),
+  onLeave: () => lec1Tl.reverse(),
+  onLeaveBack: () => lec1Tl.reverse(),
 });
 
-/* ---------- Acknowledgment pinned zoom ---------- */
-gsap.fromTo(
-  ".ack-content",
-  { scale: 1 },
-  {
-    scale: 1.18,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#acknowledgment",
-      start: "top top",
-      end: "+=100%", // how long it stays pinned; adjust to taste
-      scrub: true,
-      pin: true,
-      anticipatePin: 1,
+/* Lecture 1 parallax */
+gsap.to(".lec1-parallax", {
+  yPercent: -25,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#lecture-1",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+/* ---------- Lecture 2 title + content animation ---------- */
+const lec2Tl = gsap
+  .timeline({ paused: true })
+  .from(".lec2-title-block", {
+    x: -80,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+  })
+  .from(
+    ".lec2-body",
+    {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
     },
-  }
-);
+    "-=0.35"
+  )
+  .from(
+    "#lecture-2 .lec-card",
+    {
+      y: 30,
+      opacity: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    },
+    "-=0.25"
+  )
+  .from(
+    "#lecture-2 .sticky-note",
+    {
+      opacity: 0,
+      duration: 0.55,
+      ease: "power3.out",
+    },
+    "-=0.3"
+  );
+
+ScrollTrigger.create({
+  trigger: "#lecture-2",
+  start: "top 75%",
+  end: "bottom 25%",
+  onEnter: () => lec2Tl.play(),
+  onEnterBack: () => lec2Tl.restart(),
+  onLeave: () => lec2Tl.reverse(),
+  onLeaveBack: () => lec2Tl.reverse(),
+});
+
+/* Lecture 2 parallax */
+gsap.to(".lec2-parallax", {
+  yPercent: -20,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#lecture-2",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});

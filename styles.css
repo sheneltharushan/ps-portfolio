@@ -24,7 +24,6 @@ body {
 }
 
 /* ------------ Fonts ------------ */
-/* Adjust paths if needed */
 @font-face {
   font-family: "Gotham Light";
   src: url("assets/fonts/Gotham-Light.otf") format("opentype");
@@ -105,7 +104,129 @@ body {
   white-space: nowrap;
 }
 
-/*--ack--*/
+/* -- Acknowledgment -- */
 .ack-content {
   transform-origin: center center;
+}
+
+/* ---------- Lecture 1 sticky notes ---------- */
+
+.lec1-sticky {
+  position: relative;
+  background-image: url("assets/images/sticky.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  aspect-ratio: 4 / 3;
+  max-width: 380px;
+  width: 100%;
+  padding: 2.6rem 2.2rem 2.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.7));
+}
+
+.lec1-sticky-inner {
+  max-width: 85%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* title + text with realistic ink colour */
+.lec1-sticky-title {
+  font-family: "Gotham Black", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 1.2rem;
+  color: #2b2b2b;
+}
+
+.lec1-sticky-text {
+  font-family: "Gotham Light", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #3a3a3a;
+}
+
+/* ---------- Shared lecture cards + hover (Lec1 & Lec2) ---------- */
+
+/* All rectangular cards for lectures */
+.lec-card,
+.lec1-sticky {
+  transition: transform 220ms ease, box-shadow 220ms ease,
+    border-color 220ms ease, background-color 220ms ease;
+  will-change: transform, box-shadow;
+}
+
+.lec-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.9);
+  border-color: var(--accent);
+}
+
+/* Sticky note has its own transform so tilt is kept */
+.lec1-sticky:hover {
+  transform: translateY(-10px) scale(1.03) rotate(-1.2deg);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.9);
+  border-color: var(--accent);
+}
+
+/* ---------- Generic sticky note component (for all lectures) ---------- */
+
+.sticky-note {
+  position: relative;
+  background-image: url("assets/images/sticky.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  aspect-ratio: 4 / 3;
+  max-width: 380px;
+  width: 100%;
+  padding: 2.6rem 2.2rem 2.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.7));
+
+  transition: transform 220ms ease, box-shadow 220ms ease,
+    border-color 220ms ease, background-color 220ms ease;
+  will-change: transform, box-shadow;
+}
+
+.sticky-note-inner {
+  max-width: 85%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* title + text with realistic ink colour */
+.sticky-note-title {
+  font-family: "Gotham Black", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 1.2rem;
+  color: #2b2b2b;
+}
+
+.sticky-note-text {
+  font-family: "Gotham Light", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #3a3a3a;
+}
+
+/* Hover behaviour shared by all sticky notes */
+.sticky-note:hover {
+  transform: translateY(-10px) scale(1.03) rotate(-1.2deg);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.9);
+  border-color: var(--accent);
 }
