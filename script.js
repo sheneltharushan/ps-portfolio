@@ -136,7 +136,7 @@ const ackTl = gsap
     scrollTrigger: {
       trigger: "#acknowledgment",
       start: "top top",
-      end: "+=120%",
+      end: "+=160%",
       scrub: true,
       pin: true,
     },
@@ -391,6 +391,124 @@ gsap.to(".lec5-parallax", {
   ease: "none",
   scrollTrigger: {
     trigger: "#lecture-5",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+/* ---------- Lecture 6 title + content animation ---------- */
+const lec6Tl = gsap
+  .timeline({ paused: true })
+  .from(".lec6-title-block", {
+    x: -80,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+  })
+  .from(
+    ".lec6-body",
+    {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=0.35"
+  )
+  .from(
+    "#lecture-6 .lec-card",
+    {
+      y: 30,
+      opacity: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    },
+    "-=0.25"
+  );
+
+ScrollTrigger.create({
+  trigger: "#lecture-6",
+  start: "top 75%",
+  end: "bottom 25%",
+  onEnter: () => lec6Tl.play(),
+  onEnterBack: () => lec6Tl.restart(),
+  onLeave: () => lec6Tl.reverse(),
+  onLeaveBack: () => lec6Tl.reverse(),
+});
+
+/* ---------- Lecture 6 parallax scroll ---------- */
+gsap.to(".lec6-parallax", {
+  yPercent: -25,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#lecture-6",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+/* ---------- Lecture 7 title + content animation ---------- */
+const lec8Tl = gsap
+  .timeline({ paused: true })
+  .from(".lec8-title-block", {
+    x: -80,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+  })
+  .from(
+    ".lec8-body",
+    {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=0.35"
+  )
+  .from(
+    "#lecture-8 .lec-card",
+    {
+      y: 30,
+      opacity: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "power3.out",
+    },
+    "-=0.25"
+  );
+
+ScrollTrigger.create({
+  trigger: "#lecture-8",
+  start: "top 75%",
+  end: "bottom 25%",
+  onEnter: () => lec8Tl.play(),
+  onEnterBack: () => lec8Tl.restart(),
+  onLeave: () => lec8Tl.reverse(),
+  onLeaveBack: () => lec8Tl.reverse(),
+});
+
+/* ---------- Lecture 8 parallax scroll ---------- */
+gsap.to(".lec8-parallax", {
+  yPercent: -25,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#lecture-8",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+/* ---------- Group project parallax ---------- */
+gsap.to(".project-parallax", {
+  yPercent: -18,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#group-project",
     start: "top bottom",
     end: "bottom top",
     scrub: true,
